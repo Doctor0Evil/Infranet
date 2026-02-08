@@ -1,18 +1,23 @@
-use crate::policy::{PolicyEngine, PolicyDecision};
-use infranet_core::packet::{SovereignPacket, InfranetRouteKind, TokenClass};
+use crate::policy::{PolicyDecision, PolicyEngine};
+use infranet_core::packet::SovereignPacket;
+use std::path::Path;
 
+/// InfranetGuard wires packet flow into neurorights + RoH policy enforcement.
 pub struct InfranetGuard {
     policy: PolicyEngine,
 }
 
 impl InfranetGuard {
-    pub fn load_from_policies(dir: &std::path::Path) -> anyhow::Result<Self> {
+    pub fn load_from_policies(dir: &Path) -> anyhow::Result<Self> {
         let policy = PolicyEngine::load_from_dir(dir)?;
         Ok(Self { policy })
     }
 
-    pub fn evaluate_packet(&self, pkt: &SovereignPacket) -> PolicyDecision {
-        // Example: mental privacy + dreamstate guards
+    pub fn evaluate(&self, pkt: &SovereignPacket) -> PolicyDecision {
+        self.policy.evaluate_packet(pkt)
+    }
+}
+
         if pkt.neurorights.mental_privacy &&
            matches!(pkt.route, InfranetRouteKind::NeuroStreamIndex | InfranetRouteKind::BciControl)
         {
