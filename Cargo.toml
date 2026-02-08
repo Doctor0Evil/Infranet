@@ -1,0 +1,15 @@
+[workspace]
+members = [
+  "crates/infranet-core",
+  "crates/infranet-guard",
+  "crates/infranet-mesh",
+  "crates/infranet-firewall",
+  "crates/infranet-bchain",
+  "crates/infranet-neurofs-bridge",
+  "crates/infranet-cli",
+]
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = "z"
