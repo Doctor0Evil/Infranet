@@ -1,0 +1,60 @@
+name: Infranet CI
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build
+        run: cargo build --workspace --all-targets --locked
+
+      - name: Test
+        run: cargo test --workspace --all-targets --locked
+
+  invariants:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Validate neurorights and Tsafe schema
+        run: |
+          set -e
+          test -f policies/neurorights.json
+          test -f policies/tsafe.aln
+
+          jq '.mental_privacy, .cognitive_liberty, .forbid_decision_use, .dreamstate_sensitive, .soulnontradeable, .storagescope' \
+            policies/neurorights.json > /dev/null
+
+          # For now assume tsafe.aln is JSON; check that roh_ceiling <= 0.3
+          ROH_CEIL=$(jq '.roh_ceiling' policies/tsafe.aln)
+          echo "RoH ceiling: $ROH_CEIL"
+          python - << 'EOF'
+import os, sys, json
+ceil = float(os.environ.get("ROH_CEIL", "0.0"))
+if ceil > 0.3 + 1e-6:
+    print(f"RoH ceiling {ceil} exceeds 0.3")
+    sys.exit(1)
+EOF
+
+      - name: Property tests SMART/EVOLVE/CHAT separation
+        run: |
+          set -e
+          cargo test -p infranet-guard token_separation_tests -- --nocapture
