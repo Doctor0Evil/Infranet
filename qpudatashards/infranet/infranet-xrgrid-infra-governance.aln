@@ -1,0 +1,15 @@
+destination-path,module,version,role,security-protocol,interop-standard,identity-mgmt,ai-agent-integration,device-type,authentication,safety-metrics,edge-analytics,compliance,log-persistence
+
+vnodexrgrid-core,InfraNet-XRCore,1.0.0,XRGridKernel,AES256-PostQ,HTTP3-gRPC,DIDVitalChain,MistralQwen,RustMicroservice,FIDO2WebAuthn,"D,NR,EE,S",SNNGridHealth,GDPR-EUAI-HIPAA,HyperledgerVital
+vnodexrgrid-bci-gateway,InfraNet-BCIGateway,1.0.0,BCIIngressNode,AES256-PostQ-TLS,ALN-gRPC,DIDVitalChain,MistralQwen,BCIBridge,FIDO2BCIToken,"D,NR,EE,S",SNNDecode,VitalNetNeurorights,KernelAudit
+vnodexrgrid-content-safety,InfraNet-ContentSafety,1.0.0,ContentSafetyPlane,AES256-KernelBus,ALN-PolicyAPI,OIDCVital,MistralQwen,ClusterNode,FIDO2-WebAuthn,"D,NR,EE,S",SNNContentClass,EUAI-GDPR-COPPA,HyperledgerVital
+vnodexrgrid-planning,InfraNet-XRPlanner,1.0.0,ParticipatoryPlanning,ChaCha20-ZT,GraphQL-Safe,DIDVitalChain,IDE-ChatBridge,XRHeadset,BiometricVital,"D,NR,EE,S",AkidaEngagement,UrbanPlanningRegs,ImmutablePlanningLog
+vnodexrgrid-iot-guardian,InfraNet-IoTGuardian,1.0.0,IoTGuardian,Argon2-TLS,MQTT-Secure,OIDCVital,GPTAugment,SensorMesh,BiometricVital,"D,NR,EE,S",SNNTraffic,ISO26262-NISTISO,DIDAuditLite
+vnodexrgrid-governance,InfraNet-GovPlane,1.0.0,GovernanceNode,AES256-GCM,Rego-OPA,OIDCGov,MultiAgentGovDesk,Workstation,MFA-Class3,"D,NR,EE,S",PolicyTelemetry,ISO42001-NIST-AI,AuditLedgerFull
+vnodexrgrid-infra-token,InfraNet-INFRA-Token,1.0.0,TreasuryRewardModule,AES256-PostQ,IBC-Lite,DIDVitalChain,None,TreasuryService,HSM-based,"D,NR,EE,S",None,SecuritiesKYC-AML,HyperledgerVital
+
+# Safety kernel linkage
+vnodekernel-safety,InfraNet-SafetyKernel,1.0.0,GlobalSafetyKernel,AES256-KernelBus,DevBus-API,DIDVitalChain,None,KernelService,DNAMFARole3,"D,NR,EE,S",SNNSignalRisk,Neurorights-FDA-EUAI,KernelAudit
+
+# Governance parameters (encoded as metadata rows)
+governance-params,InfraNet-GovParams,1.0.0,Config,None,None,None,None,None,None,"D_max=0.35;NR_max=0.30;EE_min=0.60;S_gold=0.85;S_yellow=0.70","weights:wD=0.35;wNR=0.35;wEE=0.30","T_consensus=0.70","INFRA_slash=0.10"
