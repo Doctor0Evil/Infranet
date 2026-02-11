@@ -1,0 +1,11 @@
+destination-path,module,version,role,security-protocol,interop-standard,identity-mgmt,ai-agent-integration,device-type,authentication,digital-twin,edge-analytics,compliance,log-persistence
+vnodecyberswarm-core,CyberswarmKernel,1.0.0,NeurorightsSafetyKernel,AES256-KernelBus,ALN-PolicyAPI,DIDVitalChain,MistralQwen,XRGridNode,DNAMFA-Class3,Enabled,SNNKernelDistance,EUAIActNeurorights,HyperledgerVital
+vnodecyberswarm-treeobserver,TREE-Observer,1.0.0,NonActuatingPerimeterObserver,ChaCha20-ZT,ALN-ObserverBus,OIDC-Research,None,SensorMesh,FIDO2-WebAuthn,Enabled,UNFAIRDRAINMetrics,OECDSmartCity,ImmutableObserverLog
+vnodecyberswarm-earthobserver,EARTH-Observer,1.0.0,NonActuatingEcoObserver,AES256-GCM,TSN-MQTT,FIDO-ALN,None,EnvEdgeNode,HardwareToken,Enabled,EcoStressIndex,IPCCIUCNUNDRIP,HyperledgerVital
+vnodecyberswarm-policybrain,CybercoreBrain-Node,1.0.0,PolicyFusionEngine,AES256-PostQ,GraphQL-Safe,OAuthVital,ClaudeEnhance,ClusterControl,FIDO2Admin,Enabled,PolicyRankVector,GDPRHIPAALocalLaw,HyperledgerVital
+vnodecyberswarm-govblend,CyberGovParticles,1.0.0,UrbanGovernanceBlend,AES256-PostQ,ALN-GovParticles,OIDC-Gov,MistralQwen,WebPortal,FIDO2Portal,Enabled,None,BarcelonaOsloSingaporeRotterdam,HyperledgerVital
+vnodecyberswarm-evolve,EvolveLogPlane,1.0.0,OfflineCurriculumStore,Argon2-TLS,ALN-JSONL,OIDC-Research,None,DataLakeNode,PasskeyOnly,Enabled,TREEPlusEARTHEmbeddings,ISO42001NIST-AI,CephRADOSImmutable
+vnodecyberswarm-beeledger,CyberBeeRights,1.0.0,AgentCapabilityLedger,AES256-GCM,ALN-Ledger,DIDVitalChain,None,BCISwarmSim,DNAMFA-Class3,Enabled,CapabilityLatticeState,NeurorightsChileUNESCO,HyperledgerVital
+vnodecyberswarm-ethicsci,NeuroEcoCICD,1.0.0,NeurorightsCI-Safety,ChaCha20-ZT,GitHubGitLab-ALN,OIDCVital,MistralQwen,CICDCluster,FIDO2Dev,Enabled,KernelViolationDistance,NISTAIISO42001,ImmutableCILog
+vnodecyberswarm-earthpolicy,EarthBiodiversity,1.0.0,EARTHPolicyLayer,AES256-GCM,ALN-PolicyAPI,OIDC-Gov,None,PolicyNode,FIDO2Portal,Enabled,EcoViabilityKernel,IPCCIUCNLocalLaw,HyperledgerVital
+vnodecyberswarm-honeybee,CyberBeeSwarmPlane,1.0.0,XR-CyberneticHoneybeeMesh,AES256-PostQ,WebSocketSafe,DIDVitalChain,GPTAugment,NanoSwarmSim,FingerprintLife,Enabled,RoHLoadVector,FDASaMDEcoEthics,HyperledgerVital
