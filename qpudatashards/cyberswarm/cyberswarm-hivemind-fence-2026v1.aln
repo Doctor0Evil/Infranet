@@ -1,0 +1,2 @@
+destination-path,module,version,role,security-protocol,interop-standard,identity-mgmt,ai-agent-integration,device-type,authentication,digital-twin,edge-analytics,compliance,log-persistence
+vnodecyberswarm-hivemind,SECTION-HIVEMIND-FENCE-PERIMETER,1.0.0,NonActuatingObserver,ChaCha20-ZT,ALN-PolicyBus,OIDC-GovBoard,MistralQwen,ObserverNode,MFA-Class3,CityTwinReadOnly,SNNStressIndex,UNESCO-NeuroEthics+LocalLaw,ImmutableFenceLog
