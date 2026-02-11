@@ -1,0 +1,6 @@
+destination-path,module,version,role,security-protocol,interop-standard,identity-mgmt,ai-agent-integration,device-type,authentication,digital-twin,edge-analytics,compliance,log-persistence
+vnodecyberswarm-core,CyberswarmKernel,1.0.0,TreeEarthSafety,AES256-PostQ,ALN-gRPC,DIDVitalChain,None,NeuromorphicQPU,FIDO2Admin,Enabled,SNNKernelDistance,Neurorights+IPCC+Municipal,HyperledgerVital
+vnodecyberswarm-hivemind,HIVEMINDFence,1.0.0,NonActuatingObserver,ChaCha20-ZT,ALN-PolicyBus,OIDC-GovBoard,None,ObserverNode,MFA-Class3,Enabled,None,UNESCO-NeuroEthics+LocalLaw,ImmutableFenceLog
+vnodecyberswarm-earthspec,EARTHEnvelopeGuard,1.0.0,BiophysicalEnvelopeSpec,AES256-GCM,TSN-Sync,FIDO-ALN,None,EdgeSensorMesh,FIDO2Sensor,Enabled,TelemetryEnvelopeCheck,IPCC-IUCN-Indigenous,HyperledgerVital
+vnodecyberswarm-offline,CyberswarmLabBench,1.0.0,MODELONLYTrainer,Argon2-TLS,ALN-QPU,OIDC-Research,MistralQwen,QPUCluster,PasskeyOnly,Disabled,OfflineSNNReplay,ISO42001-NIST-AI,CephRADOS
+vnodecyberswarm-gov,CyberswarmGovParticle,1.0.0,JurisdictionBlend,AES256-PostQ,Rego-OPA,OIDC-MuniCouncil,MultiAgentGovDesk,ControlPlane,MFA-Class3,Enabled,None,GDPR+EUAIAct+LocalAICharters,AuditLedgerFull
