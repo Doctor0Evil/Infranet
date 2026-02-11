@@ -1,0 +1,56 @@
+
+destination-path,module,version,role,security-protocol,interop-standard,identity-mgmt,ai-agent-integration,device-type,authentication,digital-twin,edge-analytics,compliance,log-persistence
+vnodecyberswarm-tsafe,TsafeRoH-CyberswarmPerimeter,1.0.0,SwarmSafetyKernel,AES256-KernelBus,ALN-PolicyAPI,DIDVitalChain,MistralQwen,CyberDroneFleet,FIDO2-WebAuthn,Enabled,SNNRiskVector,EUAIAct-NISTAI-Neurorights,Donutloop-HyperledgerVital
+vnodebeesafety,BeeSafetyKernel,1.0.0,HiveEnvelopeGuard,ChaCha20-ZT,BCI-Bus-API,OIDC-Research,None,HiveSensorMesh,DNAMFA-Role3,Enabled,BeeRiskAxes,CHILENEURORIGHTS2023, BeeSovereignLedger
+vnodeeco-branch,eco_branch-canals,1.0.0,MarineCorridorGuard,AES256-PostQ,HTTP3-gRPC,OIDC-Gov,IDE-ChatBridge,HarborIoTMesh,MFA-Class3,Enabled,FishLarvaeScalars,IMO-MARPOL-LocalEnvLaw,ImmutableEcoAudit
+vnodecyberswarm-gov,CyberswarmGovPlane,1.0.0,EVOLVE+TECH-Governance,Argon2-TLS,Rego-OPA,OIDC-VitalGov,MultiAgentGovDesk,ControlCluster,FIDO2Admin,Enabled,None,ISO42001-NISTAI-GDPR,HyperledgerVital
+vnodecyberswarm-logger,CyberswarmDonutloop,1.0.0,RogueEventLedger,AES256-GCM,JSONLinsideALN,DIDVitalChain,AI-Diagnostics,LedgerNode,PasskeyOnly,Enabled,RoHStepMetrics,SaMD-FDA-EUAIAct,AppendOnly-Donutloop
+
+SECTION,TSafe-CORRIDORS
+ROW,tsafe,state,scalar,rohmax,0.30,float,nonwaivable,Global RoH ceiling for Cyberswarm
+ROW,tsafe,corridor,set,bee_kernel,BeeSafetyKernel.v1,string,nonnull,Reference hive EMF/acoustic/thermal envelopes
+ROW,tsafe,corridor,set,fish_scalar,CEIM-CPVM.fish.v1,string,nonnull,Fish stress scalar envelope
+ROW,tsafe,corridor,set,larvae_scalar,CEIM-CPVM.larvae.v1,string,nonnull,Larvae-safe flow/shear envelope
+ROW,tsafe,corridor,set,noise_scalar,HarborNoise.v1,string,nonnull,Underwater/acoustic envelope
+ROW,tsafe,policy,flag,safety_over_liveness,true,bool,nonwaivable,Prefer halt/retreat over task completion
+ROW,tsafe,policy,condition,allowedstep, TsafePredict(next_x) in BeeKernel AND in FishLarvaeCorridors,string,readonly,No corridor, no move
+
+SECTION,ROGUE-DETECTION
+ROW,rogue,geo,scalar,kgeo_id,Kgeo-UrbanCoast-2026,string,nonnull,Geofence id for city+harbor
+ROW,rogue,geo,condition,outside_kgeo, position notin Kgeo,string,readonly,Hard spatial fence breach
+ROW,rogue,risk,scalar,roh_threshold,0.30,float,nonwaivable,RoH risk perimeter
+ROW,rogue,risk,scalar,lyap_threshold,0.0,float,nonwaivable,Must not increase Lyapunov V(t)
+ROW,rogue,risk,condition,trigger_safe_mode, RoH_after roh_threshold OR dVdt 0,string,readonly,Switch all units to safe controller
+
+SECTION,SAFE-CONTROLLER
+ROW,safe,ctrl,scalar,vt_dec_rate,0.05,float,nonnull,Min fractional decrease in V(t) per step
+ROW,safe,ctrl,condition,vt_monotone, V(t+1)  V(t) - vt_dec_rate,string,readonly,Ensure monotone risk reduction
+ROW,safe,ctrl,condition,bee_coords_safe, r_thermal 1.0 AND r_EMF 1.0 AND r_acoustic 1.0 AND r_chem 1.0,string,readonly,Bee risk coordinates below stress
+ROW,safe,ctrl,condition,marine_scalars_safe, fish_scalar 0.2 AND larvae_scalar 0.2 AND noise_scalar 0.2,string,readonly,Larvae/fish safe during quarantine
+ROW,safe,ctrl,flag,nonlethal_quarantine,true,bool,nonwaivable,Only low-EMF, low-noise disable/retrieval
+
+SECTION,DOMAIN-SEPARATION
+ROW,domain,layer,enum,TECH,TechInfra,string,nonnull,Smart-city infra control
+ROW,domain,layer,enum,BEEKERNEL,BeeSafety,string,nonnull,Hive/bee protection
+ROW,domain,layer,enum,ECONET,MarineSafety,string,nonnull,Canal/harbor protection
+ROW,domain,rule,condition,tech_cannot_relax, TECH may not change BeeKernel or EcoNet minsafe/maxsafe,string,readonly,Upper layers cannot weaken eco corridors
+ROW,domain,rule,condition,eco_can_tighten, BeeKernel or EcoNet may tighten or pause regardless of TECH,string,readonly,Envelopes can always tighten
+
+SECTION,GOVERNANCE
+ROW,gov,role,enum,EVOLVE,AugmentFreedom,string,nonnull,Capability evolution signer
+ROW,gov,role,enum,TECH,EcologySafety,string,nonnull,Eco safety signer
+ROW,gov,flag,double_key_required,true,bool,nonwaivable,EVOLVE+TECH multisig needed for firmware change
+ROW,gov,condition,update_allowed, EVOLVE.sigvalid AND TECH.sigvalid AND RoH_after  RoH_before,string,readonly,Monotone RoH & dual consent required
+
+SECTION,DONUTLOOP-BINDING
+ROW,dl,field,scalar,donut_stream,cyberswarm-rogue-events.aln,string,nonnull,Append-only rogue-event ledger
+ROW,dl,record,field,roh_before,float,float,nonnull,RoH before Tsafe/rogue response
+ROW,dl,record,field,roh_after,float,float,nonnull,RoH after safe controller
+ROW,dl,record,field,bee_risk_vec,string,string,nonnull,Serialized r_thermal,r_EMF,r_acoustic,r_chem
+ROW,dl,record,field,fish_scalar,float,float,nonnull,Fish impact scalar
+ROW,dl,record,field,larvae_scalar,float,float,nonnull,Larvae impact scalar
+ROW,dl,record,field,noise_scalar,float,float,nonnull,Acoustic impact scalar
+ROW,dl,record,field,safe_ctrl_id,string,string,nonnull,Applied safe-controller identifier
+ROW,dl,record,field,hexstamp,string,string,nonnull,TsafeRoH-CyberswarmPerimeter-2026v1
+
+FOOTER,END-OF-SHARD
