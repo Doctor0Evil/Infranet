@@ -1,0 +1,2 @@
+destination-path,module,version,role,security-protocol,interop-standard,identity-mgmt,ai-agent-integration,device-type,authentication,digital-twin,edge-analytics,compliance,log-persistence
+vnodecyberswarm-earthspec,EARTH-Table,1.0.0,BiophysicalEnvelopeSpec,AES256-GCM,TSN-Sync,FIDO-ALN,None,EdgeSensorMesh,FIDO2Sensor,UrbanEcoTwin,TelemetryEnvelopeCheck,IPCC-IUCN-Indigenous+DataSov,HyperledgerVital
