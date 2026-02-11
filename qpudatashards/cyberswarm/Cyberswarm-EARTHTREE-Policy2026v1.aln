@@ -1,0 +1,7 @@
+module,version,role,policy-plane,governance-source,state-space,primary-signal,security-protocol,ai-agent-integration,device-type,compliance,log-persistence,D,NR,EE
+vnodecyberswarmkernel,1.0.0,CitizenSafetyKernel,Cyberswarm,CybercoreBrain+MunicipalAI,"TREE+EARTH+Citizen7D","kernel_distance Ax-b",AES256-KernelBus,MistralQwen,WearableXRSim,"Neurorights+EUAI+LocalLaw",HyperledgerVital,Low,Low,High
+vnodeearthtable,1.0.0,EcologyViabilityKernel,EARTH,"IPCC+IUCN+Indigenous+Telemetry","EARTH-multi-axis","eco_viability Ax≤b",ChaCha20-ZT,StateOnlyAgents,SensorGrid,"EnvLaw+IndigTreaties",CephRADOS,Med,Low,High
+vnodetreeperimeter,1.0.0,PerimeterEventField,TREE,"CityTwin+CriticalInfra","TREE-spatial","perimeter_events(x,t)",Argon2-TLS,StateOnlyAgents,XREdge,"SafetyCodes+CityOrdinance",ImmutableEdgeLogs,Med,Low,Med
+vnodeevolvefusion,1.0.0,EvolveDatasetFuser,Curriculum,"Cyberswarm+EARTH+TREE",".evolve.jsonl","fused_embedding[TREE+EARTH]",AES256-GCM,MistralQwen,QPUCore,"ResearchIRB+Neurorights",HyperledgerVital,Low,Low,High
+vnodegovblend,1.0.0,GovPatternNode,Governance,"Phoenix+Barcelona+Oslo+Singapore+Rotterdam","PolicyParticles","gov_constraints(p)",Kyber-Sign,ClaudeEnhance,ClusterControl,"GDPREUAI+HIPAA+Local",LogChainFull,Med,Low,Med
+vnodecurriculumkernel,1.0.0,NeuromorphicTrainer,Curriculum,"Cyberswarm+EARTH+TREE","FusedStateSpace","training_loss+kernel_margin",ChaCha20-ZT,MistralQwen,NeuromorphicNode,"IRB+UNESCONeurorights",CephRADOS,Low,Med,High
