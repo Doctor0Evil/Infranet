@@ -1,0 +1,16 @@
+filename neurosov-polytopes-2026.aln
+destination qpudatashards aln
+
+csv
+destination-path,module,version,role,security-protocol,interop-standard,identity-mgmt,ai-agent-integration,device-type,authentication,digital-twin,edge-analytics,compliance,log-persistence,corridor-id,host-scope,safety-polytope-id,bio-layer,neuromorphic-layer,civil-layer
+vnode-corridor-registry,NeuropolytopeRegistry,1.0.0,CorridorPolytopeService,AEAD-TLS1.3,REST-gRPC,DID-Residents,PolicyEngines,ClusterService,FIDO2-Web,Enabled,None,HealthPrivacyEnv,HyperledgerTrace,PHX-AZ, corridor, K-PHX-001,enabled,enabled,enabled
+vnode-host-gateway,HostSovereignGateway,1.0.0,PerHostTelemetryGuard,AES256-PostQ,TSN-MQTT,DID-HostKey,MistralQwen,EdgeHub,FIDO2-Device,Enabled,NeuromorphicRateLimit,HIPAA-GDPR,ImmutableHostLog,PHX-AZ, host, K-HOST-LOCAL,enabled,enabled,delegated
+vnode-bio-sensor,BodyBioIngress,1.0.0,BiophysicalIngressFilter,LinkLayer-Encap,SensorBus,DID-BioDevice,None,WearableBCI,LocalPIN,Enabled,ArtifactRedact,MedicalDevice,HostRingBuffer,PHX-AZ, host, K-HOST-BIO,enabled,local-only,n/a
+vnode-neuro-core,NeuromorphicCoreNode,1.0.0,OnDeviceDecodeAndConsent,ChaCha20-ZT,InternalMesh,DID-CoreNode,LocalAgents,NeuromorphicSoC,TokenlessKernel,Enabled,SpikeAnomalyDetect,AI-Act-HighRisk,CephCluster,PHX-AZ, host, K-HOST-NEURO,read-only,enabled,n/a
+vnode-consent-proxy,NeuralConsentProxy,1.0.0,PolicyAsCodeEnforcer,Argon2-mTLS,OPA-API,DID-Consent,MistralQwen,GatewayVM,FIDO2-ResidentKey,Enabled,FlowSafetyScore,NeurorightsCharter,HyperledgerVital,PHX-AZ, host, K-HOST-CONSENT,observe,gate,notify
+vnode-federated-agg,FederatedNeuromorphicAgg,1.0.0,StateOnlyFederatedLearning,AES256-GCM,TLS1.3,OIDC-Research,LabAgents,ClusterNode,MF-Research,Enabled,GradientClipNoise,GDPR-Research,CephRADOS,PHX-AZ, corridor, K-PHX-FL,abstract,abstract,approved
+vnode-eco-sensor,EcologicalStressMonitor,1.0.0,EnvStressorIngress,DTLS-Secure,MQTT-Secure,DID-Sensor,None,IoTNode,KeyPair,Enabled,TSNEnvFusion,EnvHealth,AuditLite,PHX-AZ, corridor, K-PHX-ECO,read-only,n/a,enabled
+vnode-governance,NeuroCivicGovernance,1.0.0,ArgumentGraphToPolicy,KyberSign-HTTP,GraphQL-Safe,DID-CivicBody,GovAgents,ClusterNode,MF-Gov,Enabled,PolicyImpactScore,AI-Gov-Regime,HyperledgerGov,PHX-AZ, corridor, K-PHX-GOV,reference-only,reference-only,authoritative
+vnode-mesh-bridge,CorridorMeshBridge,1.0.0,SafeCrossCorridorAssist,AES256-PostQ-TLS,HTTP3-mTLS,DID-Corridor,MultiAgentMesh,GatewayVM,FIDO2-Session,Enabled,RadiusMinimizer,IntlDataRules,HyperledgerMesh,PHX-AZ, mesh, K-MESH-001,abstract,abstract,abstract
+vnode-audit-lake,NeuroTelemetryAuditLake,1.0.0,ImmutableTelemetryArchive,AES256-GCM,TLS1.3,OIDC-Audit,None,StorageCluster,None,Enabled,TrendAnalytics,RecordsRetention,CephHyperledger,PHX-AZ, corridor, K-PHX-AUDIT,metadata-only,metadata-only,full
+endcsv
